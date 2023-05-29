@@ -6,24 +6,34 @@
 /*   By: amejia <amejia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 22:48:07 by amejia            #+#    #+#             */
-/*   Updated: 2023/05/28 23:30:09 by amejia           ###   ########.fr       */
+/*   Updated: 2023/05/29 22:48:41 by amejia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
+#include <cstdlib>
+
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 class Contact{
 	private:
-		int			id;
-		std::string	first_name;
-		std::string	last_name;
-		std::string	nickmame;
+		std::string		first_name;
+		std::string		last_name;
+		std::string		nickname;
+		unsigned int	phone_number;
+		std::string		darkest_secret;
+		int				init;
 
 	public:
 		Contact();
 		~Contact();
-		void update_contact(int id, std::string first_name, std::string last_name, 
-			std::string nickname);
+		void update_contact(std::string first_name, std::string last_name, 
+			std::string nickname, unsigned int phone_number, 
+			std::string darkest_secret);
+		void print();
+		void printline(int id);
 };
 
+#endif
