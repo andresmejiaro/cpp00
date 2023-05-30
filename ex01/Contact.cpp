@@ -6,7 +6,7 @@
 /*   By: amejia <amejia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 22:47:38 by amejia            #+#    #+#             */
-/*   Updated: 2023/05/29 22:45:58 by amejia           ###   ########.fr       */
+/*   Updated: 2023/05/30 11:42:10 by amejia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,19 @@ Contact::~Contact(){
 
 void Contact::printline(int id){
 	if (init != -1)
-		std::cout <<  id << "|" << first_name << "|" << last_name << "|" << 
-		nickname  << std::endl;
+		std::cout <<  id << "\t|" << first_name.substr(0,4) +"." << "\t|" << 
+		last_name.substr(0,4) +"." << "\t|" << nickname.substr(0,4) +"."  <<
+		std::endl;
 }
 
 void Contact::print(){
-	std::cout << "|" << first_name << std::endl;
-	std::cout << "|" << last_name << std::endl;
-	std::cout << "|" << nickname << std::endl;
-	std::cout << "|" << phone_number << std::endl;
-	std::cout << "|" << darkest_secret << std::endl;
+	std::cout << "First Name: " << first_name << std::endl;
+	std::cout << "Last Name: " << last_name << std::endl;
+	std::cout << "Nickname: " << nickname << std::endl;
+	std::cout << "Phone Number: " << phone_number << std::endl;
+	std::cout << "Darkest Secret: " << darkest_secret << std::endl;
+}
+
+int Contact::get_init(){
+	return (init);
 }

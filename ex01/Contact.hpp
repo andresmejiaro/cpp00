@@ -6,7 +6,7 @@
 /*   By: amejia <amejia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 22:48:07 by amejia            #+#    #+#             */
-/*   Updated: 2023/05/29 22:48:41 by amejia           ###   ########.fr       */
+/*   Updated: 2023/05/30 11:36:02 by amejia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ class Contact{
 	public:
 		Contact();
 		~Contact();
-		void update_contact(std::string first_name, std::string last_name, 
+		void	update_contact(std::string first_name, std::string last_name, 
 			std::string nickname, unsigned int phone_number, 
 			std::string darkest_secret);
-		void print();
-		void printline(int id);
+		void	print();
+		void	printline(int id);
+		int		get_init();
 };
 
 #endif

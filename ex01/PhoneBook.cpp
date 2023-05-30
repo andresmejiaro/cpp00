@@ -6,7 +6,7 @@
 /*   By: amejia <amejia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 23:07:28 by amejia            #+#    #+#             */
-/*   Updated: 2023/05/29 22:49:37 by amejia           ###   ########.fr       */
+/*   Updated: 2023/05/30 11:35:32 by amejia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void PhoneBook::Search(){
 	std::cout << "Enter contact id: " << std::endl;
 	std::getline(std::cin, data);
 	int id = (unsigned int)std::atoi(data.c_str());
-	if  (id < 8)
+	if  (id < 8 && contacts[id].get_init() == 1)
 		contacts[id].print();
 }
 
