@@ -6,17 +6,17 @@
 #    By: amejia <amejia@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/28 17:23:35 by amejia            #+#    #+#              #
-#    Updated: 2023/05/30 18:18:57 by amejia           ###   ########.fr        #
+#    Updated: 2023/06/01 22:13:12 by amejia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
-SRCS = main.cpp Contact.cpp PhoneBook.cpp
+SRCS = Account.cpp main2.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -std=c++98
+CFLAGS = #-Wall -Wextra -Werror -std=c++98
 
 CC = c++
 

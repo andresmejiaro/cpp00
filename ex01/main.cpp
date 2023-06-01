@@ -6,12 +6,13 @@
 /*   By: amejia <amejia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 23:06:08 by amejia            #+#    #+#             */
-/*   Updated: 2023/05/28 23:56:19 by amejia           ###   ########.fr       */
+/*   Updated: 2023/06/01 20:22:20 by amejia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <iostream>
+
 
 int main(void){
 	std::string		command = "";
@@ -25,5 +26,4 @@ int main(void){
 		} else if (command == "SEARCH")
 			ph_book.Search();
 	}
-	
 }

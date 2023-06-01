@@ -6,7 +6,7 @@
 /*   By: amejia <amejia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 22:47:38 by amejia            #+#    #+#             */
-/*   Updated: 2023/05/30 11:42:10 by amejia           ###   ########.fr       */
+/*   Updated: 2023/06/01 20:54:48 by amejia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,30 @@ Contact::~Contact(){
 	
 }
 
+std::string Contact::scaleto10(std::string str)
+{
+	int len = str.size();
+	
+	if (len == 10)
+		return (str);
+	else if (len > 10){
+		std::string str2 = str.substr(0,9) + ".";
+		return (str2);
+	}
+	else {
+		int k = 10 - len;
+		std::string str2 = str;
+		while(k-- > 0)
+			str2 = " " + str2;
+		return (str2);
+	}	
+}
+
+
 void Contact::printline(int id){
 	if (init != -1)
-		std::cout <<  id << "\t|" << first_name.substr(0,4) +"." << "\t|" << 
-		last_name.substr(0,4) +"." << "\t|" << nickname.substr(0,4) +"."  <<
-		std::endl;
+		std::cout << "         "  << id << "|" << scaleto10(first_name)  << "|" 
+		<< scaleto10(last_name) << "|" << scaleto10(nickname)  << std::endl;
 }
 
 void Contact::print(){
@@ -55,3 +74,4 @@ void Contact::print(){
 int Contact::get_init(){
 	return (init);
 }
+

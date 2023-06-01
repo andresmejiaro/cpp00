@@ -6,7 +6,7 @@
 /*   By: amejia <amejia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 23:07:28 by amejia            #+#    #+#             */
-/*   Updated: 2023/05/30 11:35:32 by amejia           ###   ########.fr       */
+/*   Updated: 2023/06/01 21:01:32 by amejia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,17 @@ void PhoneBook::AddContact(){
 	std::string		data[5];
 	unsigned int	phone_n;
 
+	data[3] = "r";
 	std::cout << "Enter Name: " << std::endl;
 	std::getline(std::cin, data[0]);
 	std::cout << "Enter Last Name: " << std::endl;
 	std::getline(std::cin, data[1]);
 	std::cout << "Enter Nickname: " << std::endl;
 	std::getline(std::cin, data[2]);
-	std::cout << "Enter Phone Number: " << std::endl;
-	std::getline(std::cin, data[3]);
+	while (check_digits(data[3])){
+		std::cout << "Enter Phone Number: " << std::endl;
+		std::getline(std::cin, data[3]);
+	}
 	phone_n = (unsigned int)std::atoi(data[3].c_str());
 	std::cout << "Darkest Secret: " << std::endl;
 	std::getline(std::cin, data[4]);
@@ -42,7 +45,7 @@ void PhoneBook::AddContact(){
 void PhoneBook::Search(){
 	
 	std::string	data;
-	
+	std::cout << "     Index|First Name| Last Name| Nickname" << std::endl;
 	for (int i = 0; i < 8; i++){
 		contacts[i].printline(i);
 	}
@@ -62,3 +65,11 @@ void PhoneBook::AddContact(std::string first_name, std::string last_name,
 	count ++;				
 }
 
+int PhoneBook::check_digits(std::string str){
+	for (size_t k = 0; k < str.size(); k++)
+	{
+		if (!std::isdigit(str[k]))
+			return (1);
+	}
+	return(0);
+}

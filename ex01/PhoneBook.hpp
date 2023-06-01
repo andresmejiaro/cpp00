@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amejia <amejia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 22:33:58 by amejia            #+#    #+#             */
-/*   Updated: 2023/05/29 22:47:27 by amejia           ###   ########.fr       */
+/*   Updated: 2023/06/01 20:53:52 by amejia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 
 class PhoneBook{
 	private:
-		Contact contacts[8];
+		Contact 	contacts[8];
+		static int	check_digits(std::string str);
 	public:
 		PhoneBook();
 		~PhoneBook();
